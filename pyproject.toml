@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "long-weekend-strategist"
+version = "1.0.0"
+description = "Stretch your vacation days into long weekends: scores leave-request combos around holidays and weekends, exports an .ics and a request-these-dates note."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["vacation", "pto", "long weekend", "holidays", "calendar", "ics", "cli"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Office/Business :: Scheduling",
+]
+dependencies = []
+
+[project.scripts]
+longweekend = "longweekend.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["longweekend"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
